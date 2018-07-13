@@ -1,14 +1,15 @@
+from os import path as op
 import json
 
 from faker import Faker
 import numpy as np
 import scipy.stats
 
-by_country = json.load(open('bycountry.json', 'r'))
+by_country = json.load(open(op.join(op.dirname(__file__), 'bycountry.json'), 'r'))
 country_pop = list(map(lambda x: int(x['pop']), by_country))
 countries = list(map(lambda x: x['country'], by_country))
 
-by_age_and_gender = json.load(open('byageandgender.json', 'r'))
+by_age_and_gender = json.load(open(op.join(op.dirname(__file__),'byageandgender.json'), 'r'))
 age_gender_pop = list(map(lambda x: float(x['v']), by_age_and_gender))
 age_gender = list(map(lambda x: (x['k'], x['g']), by_age_and_gender))
 
