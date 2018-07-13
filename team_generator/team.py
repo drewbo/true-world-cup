@@ -47,6 +47,9 @@ def get_name(country, gender):
     else:
         return fake.name_female()
 
+def get_team_name():
+    return None
+
 def get_team():
     team = []
     for player in range(11):
